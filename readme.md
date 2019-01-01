@@ -5,9 +5,9 @@
 - build Slack like chat application with vanila JavaScript
 - minimal use of dependencies and frameworks
 - component based approach
-- create "React like" component pattern
-- create "Redux like" data management pattern
-- create "React Router like" Single Page Routing pattern
+- recreate "React like" component pattern from scratch
+- recreate "Redux like" data management pattern from scratch
+- recreate "React Router like" Single Page Routing pattern from scratch
 
 ## Getting Started
 
@@ -29,7 +29,8 @@ npm install
 
 ### Bundle Client with Webpack
 
-- bundle files with webpack
+- bundle files with webpack and watch for changes  
+  bundled files will be output to ./dist
 
 ```
 npm run webpack:watch
@@ -37,7 +38,8 @@ npm run webpack:watch
 
 ### Serving application
 
-- run nodemon
+- run nodemon to serve application and watch for changes  
+  application will be serving on http://localhost:3030
 
 ```
 npm run server:watch
