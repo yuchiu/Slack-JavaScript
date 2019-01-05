@@ -27,20 +27,26 @@ cd Slack-JavaScript
 npm install
 ```
 
-### Bundle Client with Webpack
+### Client
 
-- bundle files with webpack and watch for changes  
-  bundled files will be output to ./dist
-
-```
-npm run webpack:watch
-```
-
-### Serving application
-
-- run nodemon to serve application and watch for changes  
-  application will be serving on http://localhost:3030
+- install dependencies & start application
 
 ```
-npm run server:watch
+cd client
+npm install
+npm start
 ```
+
+application will be running on http://localhost:3000
+
+### Server
+
+- install dependencies & start application
+
+```
+cd server
+npm install
+npm start
+```
+
+application will be running on http://localhost:3030

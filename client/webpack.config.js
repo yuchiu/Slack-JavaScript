@@ -3,21 +3,24 @@ const path = require("path");
 const autoprefixer = require("autoprefixer");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+var OpenBrowserPlugin = require('open-browser-webpack-plugin')
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
     app: [
-      path.join(__dirname, "src", "public", "components", "index.js"),
-      path.join(__dirname, "src", "public", "css", "main.scss")
+      path.join(__dirname, "src", "components", "index.js"),
+      path.join(__dirname, "src", "css", "main.scss")
     ]
   },
   output: {
     path: path.join(__dirname, "dist"),
     publicPath: "/",
-    filename: "js/[name].bundle.js",
+    filename: "./js/[name].bundle.js",
     sourceMapFilename: "[name].bundle.map"
   },
+
+  mode: "development",
 
   devtool: "#source-map",
 
@@ -40,13 +43,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "views", "index.html")
     }),
-    new MiniCSSExtractPlugin({
-      filename: "css/[name].bundle.css"
-    }),
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: [autoprefixer()]
       }
+    }),
+    new MiniCSSExtractPlugin({
+      filename: "./css/[name].bundle.css"
+    }),
+    new OpenBrowserPlugin({
+      url: 'http://localhost:3000'
     })
   ],
 
